@@ -4,32 +4,6 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 function Info() {
   const [posts,setPosts] = useState([]);
-  const turtles = [
-    {
-        name: "Leonardo",
-        nickName: "Leo",
-        weapon: "Katana",
-        imgUrl: "https://upload.wikimedia.org/wikipedia/en/e/ed/Leonardo_%28Teenage_Mutant_Ninja_Turtles%29.jpg"
-    },
-    {
-        name: "Donatello",
-        nickName: "Don",
-        weapon: "Bo staff",
-        imgUrl: "https://upload.wikimedia.org/wikipedia/en/5/5a/Donatello_%28Teenage_Mutant_Ninja_Turtles%29.jpg"
-    },
-    {
-        name: "Michelangelo",
-        nickName: "Mikey",
-        weapon: "Nunchucks",
-        imgUrl: "https://upload.wikimedia.org/wikipedia/en/f/f3/Michelangelo_%28Teenage_Mutant_Ninja_Turtles%29.jpg"
-    },
-    {
-        name: "Raphael",
-        nickName: "Raph",
-        weapon: "Sai",
-        imgUrl: "https://upload.wikimedia.org/wikipedia/en/7/72/Raphael_%28Teenage_Mutant_Ninja_Tutles%29.jpg"
-    }
-]
   /* currently this works.. but is incorrect.
      asynchronous calls should be placed within the useEffect() Hook
      and not on a button event. 
@@ -64,7 +38,7 @@ function Info() {
       <div>
           {posts.map((post,index) =>
 
-          <div key="index">
+          <div key={index}>
               <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src="holder.js/100px180" />
                 <Card.Body>
