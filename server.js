@@ -42,20 +42,28 @@ const getForms = async () => {
     console.log(form)
   }
 }
-
+//middleware
 dbConnect();
-app.use(express.urlencoded({extended: true}))
+
 app.use(express.json())
 app.use(cors());
+app.use(express.urlencoded({extended: false}))
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 });
 
 app.get('/info', (req, res) => {
-  let obj = Form.find();
-  console.log(obj);
-  res.send('Hello World!')
+  //Query
+ Form.find({}).then((data) => {
+
+   res.json(data)
+ }).catch(error => {
+   console.log(error);
+ })
+
+  //console.log(req);
+
 });
 
 app.post('/post', async (req,res) => {

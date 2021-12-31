@@ -29,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/info" element={<Info />} />
         <Route path="/form" element={<Home />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </Router>
 
