@@ -1,2 +1,2 @@
 # SimpleForm
-A simple form that will connect to a backend (Express)
+A simple form that will connects to a database and performs CRUD operations.
